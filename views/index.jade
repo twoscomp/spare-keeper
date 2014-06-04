@@ -1,0 +1,38 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  form(id='selector', method="post", action='/')
+      input(type='checkbox', name='leave[]', value=1)
+      label 1
+      input(type='checkbox', name='leave[]', value=2)
+      label 2
+      input(type='checkbox', name='leave[]', value=3)
+      label 3
+      input(type='checkbox', name='leave[]', value=4)
+      label 4
+      input(type='checkbox', name='leave[]', value=5)
+      label 5
+      input(type='checkbox', name='leave[]', value=6)
+      label 6
+      input(type='checkbox', name='leave[]', value=7)
+      label 7
+      input(type='checkbox', name='leave[]', value=8)
+      label 8
+      input(type='checkbox', name='leave[]', value=9)
+      label 9
+      input(type='checkbox', name='leave[]', value=10)
+      label 10
+      input(type='checkbox', name='converted', value="true")
+      label Converted
+      input(type='text', name='user')
+      input(type='submit' value='Submit')
+  form
+
+  if (pinLeaves)
+    p Recent Leaves for #{user}
+        ul.list-group
+            each item in pinLeaves
+                li.list-group-item #{item}
